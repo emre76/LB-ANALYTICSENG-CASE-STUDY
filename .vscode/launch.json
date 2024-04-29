@@ -1,0 +1,100 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "local setup lichtblick contracts",
+            "type": "python",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "module": "ingestion.main",
+            "justMyCode": true,
+            "env": {},
+            "args": [
+                "--runtime",
+                "local-dev",
+                "--month",
+                "202011",
+                "--table-name",
+                "contracts",
+             //   "--bucket-name",
+             //   "xxx"
+            ],
+            "envFile": "${workspaceFolder}/.env",
+        },
+        {
+            "name": "local setup lichtblick products",
+            "type": "python",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "module": "ingestion.main",
+            "justMyCode": true,
+            "env": {},
+            "args": [
+                "--runtime",
+                "local-dev",
+                "--month",
+                "202011",
+                "--table-name",
+                "products",
+             //   "--bucket-name",
+             //   "xxx"
+            ],
+            "envFile": "${workspaceFolder}/.env",
+        },
+        {
+            "name": "local setup lichtblick prices",
+            "type": "python",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "module": "ingestion.main",
+            "justMyCode": true,
+            "env": {},
+            "args": [
+                "--runtime",
+                "local-dev",
+                "--month",
+                "202011",
+                "--table-name",
+                "prices",
+             //   "--bucket-name",
+             //   "xxx"
+            ],
+            "envFile": "${workspaceFolder}/.env",
+        },
+        {
+            "name": "local setup",
+            "type": "python",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "module": "acled_iso.main",
+            "justMyCode": true,
+            "env": {},
+            "args": [
+                "--runtime",
+                "local-cli",
+                "--kfe-config-path",
+                "../../common/kfe_configmap/kfe-configmap.yaml",
+                "--kfe-secrets-path",
+                "../../common/kfe_configmap/sample-kfe-secrets.yaml",
+                "--source-config-path",
+                "config/acled-iso-configmap.yaml",
+                "--source-secrets-path",
+                "/home/emre/Bdr/secrets/acled-extsecret.yaml",
+                "--logging-config-path",
+                "config/acled-iso-logging-configmap.yaml",
+                "--hana-instance",
+                "hana_phd",
+                //"check-latest-version"
+                //"check-update-required"
+                //"download"
+                "consolidate"
+                //"transform"
+                //"upload"
+            ],
+            "envFile": "${workspaceFolder}/.env",
+        }
+    ]
+}

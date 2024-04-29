@@ -1,0 +1,8 @@
+{
+  "gcp-adapter":{
+    "bucket":"casestudy-data-lb",
+    "local_input_path":"ingestion/src_data",
+    "target_path_csv" : "csv_input",
+    "target_path_parquet" : "parquet_files"
+  }
+}

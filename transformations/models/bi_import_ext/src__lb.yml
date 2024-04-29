@@ -1,0 +1,107 @@
+version: 2
+sources:
+- name: src__lichtblick
+  schema: bi_import_ext
+  tables:
+  - name: lb__contracts__ext
+    external:
+      location: 'gs://casestudy-data-lb/parquet_files/contracts/*'
+      partitions:
+        - name: part_month
+          data_type: INTEGER
+        - name: part_day
+          data_type: INTEGER
+        - name: part_datetime
+          data_type: INTEGER
+      options:
+        format: parquet
+        hive_partition_uri_prefix: 'gs://casestudy-data-lb/parquet_files/contracts/'
+    columns:
+      - name: id
+        data_type: INTEGER
+      - name: type
+        data_type: STRING
+      - name: energy
+        data_type: STRING
+      - name: usage
+        data_type: FLOAT64
+      - name: usagenet
+        data_type: FLOAT64
+      - name: createdat
+        data_type: STRING
+      - name: startdate
+        data_type: STRING
+      - name: enddate
+        data_type: STRING
+      - name: fillingdatecancellation
+        data_type: STRING
+      - name: cancellationreason
+        data_type: STRING
+      - name: city
+        data_type: STRING
+      - name: status
+        data_type: STRING
+      - name: productid
+        data_type: INTEGER
+      - name: modificationdate
+        data_type: STRING
+  - name: lb__products__ext
+    external:
+      location: 'gs://casestudy-data-lb/parquet_files/products/*'
+      partitions:
+        - name: part_month
+          data_type: INTEGER
+        - name: part_day
+          data_type: INTEGER
+        - name: part_datetime
+          data_type: INTEGER
+      options:
+        format: parquet
+        hive_partition_uri_prefix: 'gs://casestudy-data-lb/parquet_files/products/'
+    columns:
+      - name: id
+        data_type: INTEGER
+      - name: productcode
+        data_type: STRING
+      - name: productname
+        data_type: STRING
+      - name: energy
+        data_type: STRING
+      - name: consumptiontype
+        data_type: STRING
+      - name: deleted
+        data_type: INTEGER
+      - name: modificationdate
+        data_type: STRING
+  - name: lb__prices__ext
+    external:
+      location: 'gs://casestudy-data-lb/parquet_files/prices/*'
+      partitions:
+        - name: part_month
+          data_type: INTEGER
+        - name: part_day
+          data_type: INTEGER
+        - name: part_datetime
+          data_type: INTEGER
+      options:
+        format: parquet
+        hive_partition_uri_prefix: 'gs://casestudy-data-lb/parquet_files/prices/'
+    columns:
+      - name: id
+        data_type: INTEGER
+      - name: productid
+        data_type: INTEGER
+      - name: pricecomponentid
+        data_type: INTEGER
+      - name: productcomponent
+        data_type: STRING
+      - name: price
+        data_type: FLOAT64
+      - name: unit
+        data_type: STRING
+      - name: valid_from
+        data_type: STRING
+      - name: valid_until
+        data_type: STRING
+      - name: modificationdate
+        data_type: STRING
