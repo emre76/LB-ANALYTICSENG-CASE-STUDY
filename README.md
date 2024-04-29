@@ -1,6 +1,6 @@
 # NOTES
 
-This ELT-Pipeline is works on GCP  
+This ELT-Pipeline works on GCP.  
 As packaging tool, Poetry is used.
 
 
