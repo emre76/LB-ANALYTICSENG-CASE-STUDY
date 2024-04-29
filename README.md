@@ -1,9 +1,10 @@
 # NOTES
 
-This ELT-Pipeline is works on GCP
+This ELT-Pipeline is works on GCP  
+As packaging tool, Poetry is used.
 
 
-This Lichtblick c ase-study implementation hat 2 parts:
+This Lichtblick case-study implementation has 2 parts:
 
 ### INGESTION
 This python program is a in Click implemented CLI-Application, that takes  a monthly table batch and saves it in the GCS in a partitioned way. The VSCode Debugger calls can be seen under ".vscode" folder.
